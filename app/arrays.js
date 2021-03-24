@@ -70,12 +70,12 @@ let flights = [{
 
 
 function flightCost(destination, firstClass) {
-    const found = flights.find()
-
-
+   const flightPrice = flights.find(flight => flight.to == destination.toUpperCase()) //what's going on here
+   if (firstClass == true){
+       return flightPrice.prices.firstClass
+   }
+   return flightPrice.prices.standard
 }
-
-
 // ------------------------------------------
 
 
@@ -89,12 +89,22 @@ function flightCost(destination, firstClass) {
 // output: { error: "No user with that id." } 
 
 
-let staff = [{ id: 1, name: 'Jon' }, { id: 2, name: 'Yuli' }, { id: 21, name: 'Peter' },
-{ id: 17, name: 'St. MaryLou de la Playa Carmen' }, { id: 51, name: 'Doug' },
-{ id: 881, name: 'Paul' }, { id: 0, name: 'Jon' }, { id: 999, name: 'Timma' }]
+let staff = [
+    { id: 1, name: 'Jon' }, 
+    { id: 2, name: 'Yuli' }, 
+    { id: 21, name: 'Peter' },
+    { id: 17, name: 'St. MaryLou de la Playa Carmen' }, 
+    { id: 51, name: 'Doug' },
+    { id: 881, name: 'Paul' }, 
+    { id: 0, name: 'Jon' }, 
+    { id: 999, name: 'Timma' }]
 
 function findById(id) {
-
+    const user = staff.find(staff => staff.name == id)
+    if (firstClass == true){
+        return user
+    }
+    return 'No user with that id.'
 }
 
 
