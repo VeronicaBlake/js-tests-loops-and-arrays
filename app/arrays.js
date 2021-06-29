@@ -1,13 +1,16 @@
-// 1. Given an array, move the element at index 0 to the last position in the array. Return the modified array.
+// 1. Given an array, move the element at index 0 to the last position in the array. 
+//Return the modified array.
 // Example:
 // input: ['This', 'is', 'a', 'split', 'sentence.']
 // output: ['is', 'a', 'split', 'sentence.', 'This']
 
 function rearranger(arr) {
-    arrReturn = arr
-    const firstElem = arrReturn.shift()
-    arrReturn.push(firstElem)
-    return arrReturn
+    result = arr
+    //.shift will isolate the index 0 and then it's assigned to firstElem
+    const firstElem = result.shift()
+    //then you .push first elem to the end of the array. boom. roasted. 
+    result.push(firstElem)
+    return result
 }
 // ------------------------------------------
 
@@ -17,9 +20,7 @@ function rearranger(arr) {
 // input: [6, 4, 8, 33, 42, 10]
 // output: 42
 
-function largestNum(arr) {
-    return Math.max(...arr)
-}
+
 
 
 // ------------------------------------------
@@ -30,12 +31,8 @@ function largestNum(arr) {
 // input:  [4, 2, 1, 7]
 // output: [16, 8, 4, 28]
 
-function elemsTimesLength(arr) {
-    const newArr = arr.map(x => x * arr.length)
-    return newArr
 
-// I did this one all by myself! :D
-}
+
 
 
 // ------------------------------------------
@@ -45,37 +42,7 @@ function elemsTimesLength(arr) {
 //4. Write a function that will use the following data to return the cost of flights from boise to a neighboring city, 
 //by default return the standard cost unless firstClass is set to true
 
-let flights = [{
-    from: 'BOI',
-    to: 'LAX',
-    prices: {
-        standard: 500,
-        firstClass: 2200
-    }
-}, {
-    from: 'BOI',
-    to: 'SEA',
-    prices: {
-        standard: 800,
-        firstClass: 1200
-    }
-}, {
-    from: 'BOI',
-    to: 'CAN',
-    prices: {
-        standard: 750,
-        firstClass: 6200
-    }
-}]
 
-
-function flightCost(destination, firstClass) {
-   const flightPrice = flights.find(flight => flight.to == destination.toUpperCase()) //what's going on here
-   if (firstClass == true){
-       return flightPrice.prices.firstClass
-   }
-   return flightPrice.prices.standard
-}
 // ------------------------------------------
 
 
@@ -89,23 +56,7 @@ function flightCost(destination, firstClass) {
 // output: { error: "No user with that id." } 
 
 
-let staff = [
-    { id: 1, name: 'Jon' }, 
-    { id: 2, name: 'Yuli' }, 
-    { id: 21, name: 'Peter' },
-    { id: 17, name: 'St. MaryLou de la Playa Carmen' }, 
-    { id: 51, name: 'Doug' },
-    { id: 881, name: 'Paul' }, 
-    { id: 0, name: 'Jon' }, 
-    { id: 999, name: 'Timma' }]
 
-function findById(id) {
-    const user = staff.find(staff => staff.name == id)
-    if (firstClass == true){
-        return user
-    }
-    return 'No user with that id.'
-}
 
 
 // ------------------------------------------
@@ -118,27 +69,4 @@ function findById(id) {
 // input: 'Johnny P'
 // output: "Johnny P is in the band and plays the sax"
 
-let theBand = {
-    homeCity: "Birmingham",
-    members: [{
-        name: 'Johnny P',
-        instrument: 'sax'
-    }, {
-        name: 'River',
-        instrument: 'drums'
-    }, {
-        name: 'Kris',
-        instrument: 'guitar'
-    }]
-}
 
-function bandMemberDetails(name) {
-    let nameInst = [
-    {name: 'Johnny P' , instrument: 'sax'},
-    {name: 'River' ,instrument: 'drums'},
-    {name: 'Kris' , instrument: 'guitar'}
-    ]
-
-    let intro = `${name} is in the band and plays the ${instrument}`
-    return intro
-}
